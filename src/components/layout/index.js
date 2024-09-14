@@ -1,6 +1,5 @@
-import { SunIcon } from '@heroicons/react/20/solid';
 import localFont from 'next/font/local';
-import Link from 'next/link'
+import Link from 'next/link';
 
 const geistMono = localFont({
   src: "../../pages/fonts/GeistMonoVF.woff",
@@ -13,7 +12,8 @@ const Layout = ({ children }) => {
     <div
       className={`container ${geistMono.variable} font-[family-name:var(--font-geist-mono)]`}
     >
-      <header className='border-solid border-2px border-stone-100 bg-stone-100 p-4 rounded-lg mt-4 '
+      <header
+        className='border-solid border-2px border-stone-100 bg-stone-100 p-4 lg:rounded-lg lg:mt-4 sm:mt-0 sm:rounded-none'
       >
         <nav>
           <ul className='flex gap-4 flex items-center justify-between'>
@@ -42,17 +42,17 @@ const Layout = ({ children }) => {
                   About me
                 </Link>
               </li>
-
             </div>
           </ul>
         </nav>
       </header>
 
-      <main className=' px-8  rounded-lg'
-      >{children}</main>
+      <main className='px-8 rounded-lg sm:rounded-none'>
+        {children}
+      </main>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
 

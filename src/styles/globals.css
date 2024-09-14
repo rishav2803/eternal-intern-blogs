@@ -7,12 +7,6 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   color: var(--foreground);
@@ -21,8 +15,10 @@ body {
 }
 
 .container{
-  width:min(100%,100ch);
+  width:min(100%,1020px);
   margin-inline:auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 @layer utilities {
