@@ -82,7 +82,6 @@ const options = {
 };
 
 const RichText = ({ content }) => {
-  console.log(content);
   return <>{documentToReactComponents(content, options)}</>;
 };
 

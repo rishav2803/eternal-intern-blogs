@@ -7,18 +7,11 @@ import { useRouter } from 'next/router'
 import CustomHead from '@/components/CustomerHead'
 
 
-const Post = ({ post, preview }) => {
+export default function Post({ post, preview }) {
   const router = useRouter()
 
-  console.log("url is", post.fields.coverImage.fields.file.url);
   return (
     <>
-      <CustomHead
-        title={`${post.fields.title} - Eternal Intern`}
-        content={post.fields.excerpt}
-        pageSlug={post.fields.slug}
-        ogImage={post.fields.coverImage.fields.file.url}
-      />
       <section className='section'>
         {preview && <PreviewAlert />}
         <div className='container'>
@@ -27,6 +20,12 @@ const Post = ({ post, preview }) => {
               <Skeleton />
             ) : (
               <>
+                <CustomHead
+                  title={`${post.fields.title} - Eternal Intern`}
+                  content={post.fields.excerpt}
+                  pageSlug={post.fields.slug}
+                  ogImage={post.fields.coverImage.fields.file.url}
+                />
                 <PostHeader post={post} />
                 <PostBody post={post} />
               </>
@@ -39,9 +38,7 @@ const Post = ({ post, preview }) => {
 }
 
 export const getStaticProps = async ({ params, preview = false }) => {
-  console.log("Params is", params)
   const cfClient = preview ? previewClient : client
-  console.log(client)
 
   const { slug } = params
   const response = await cfClient.getEntries({
@@ -73,11 +70,9 @@ export const getStaticPaths = async () => {
     params: { slug: item.fields.slug }
   }))
 
-  console.log("Paths is", paths)
   return {
     paths,
     fallback: true
   }
 }
 
-export default Post
