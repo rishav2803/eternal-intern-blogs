@@ -20,12 +20,12 @@ export default function Post({ post, preview }) {
               <Skeleton />
             ) : (
               <>
-                <CustomHead
-                  title={`${post.fields.title} - Eternal Intern`}
-                  content={post.fields.excerpt}
-                  pageSlug={post.fields.slug}
-                  ogImage={post.fields.coverImage.fields.file.url}
-                />
+                {/* <CustomHead */}
+                {/*   title={`${post.fields.title} - Eternal Intern`} */}
+                {/*   content={post.fields.excerpt} */}
+                {/*   pageSlug={post.fields.slug} */}
+                {/*   ogImage={post.fields.coverImage.fields.file.url} */}
+                {/* /> */}
                 <PostHeader post={post} />
                 <PostBody post={post} />
               </>
