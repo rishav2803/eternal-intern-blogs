@@ -11,7 +11,14 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100ch',
+          }
+        }
+      }
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };

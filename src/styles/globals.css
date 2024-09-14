@@ -20,8 +20,40 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.container{
+  width:min(100%,100ch);
+  margin-inline:auto;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  #__next {
+    @apply contents;
+  }
+
+  html {
+    @apply h-full scroll-smooth antialiased;
+  }
+
+  body {
+    @apply flex h-full flex-col text-stone-600;
+  }
+
+  main {
+    @apply grow;
+  }
+
+  .section {
+    @apply py-10;
+  }
+
+
+  .title {
+    @apply font-bold tracking-tight;
   }
 }
