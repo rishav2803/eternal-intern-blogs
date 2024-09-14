@@ -10,6 +10,7 @@ import CustomHead from '@/components/CustomerHead'
 export default function Post({ post, preview }) {
   const router = useRouter()
 
+  console.log("Post is", post);
   return (
     <>
       <section className='section'>
@@ -54,6 +55,8 @@ export const getStaticProps = async ({ params, preview = false }) => {
       }
     }
   }
+
+  console.log(response.items[0]);
 
   return {
     props: {
