@@ -22,8 +22,6 @@ const Posts = ({ posts }) => {
           {posts.map((post, i) => (
             <>
               <PostCard key={post.fields.slug} post={post} />
-              <PostCard key={post.fields.slug} post={post} />
-              <PostCard key={post.fields.slug} post={post} />
             </>
           ))}
         </ul>
