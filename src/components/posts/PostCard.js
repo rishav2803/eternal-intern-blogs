@@ -17,12 +17,13 @@ const PostCard = ({ post }) => {
   return (
     <li className="rounded-md overflow-hidden shadow-md ">
       <Link href={`/posts/${slug}`} aria-label={title} >
-        <div className="mb-2">
+        <div className="mb-2 h-[300px]" >
           <ContentfulImage
             alt={`Cover Image for ${title}`}
             src={coverImage.fields.file.url}
             width={coverImage.fields.file.details.image.width}
             height={300}
+            className=" w-full h-full object-cover"
           />
         </div>
       </Link>

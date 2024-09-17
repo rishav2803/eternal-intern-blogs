@@ -12,12 +12,13 @@ const PostHeader = ({ post }) => {
         <Avatar name={"Rishav Thapliyal"} picture={author.fields.picture} />
         <DateComponent dateString={date} className='text-sm text-gray-400' />
       </div>
-      <div className='mb-8 md:mb-16 sm:mx-0'>
+      <div className='mb-8  md:mb-16 sm:mx-0'>
         <ContentfulImage
           alt={`Cover Image for ${title}`}
           src={coverImage.fields.file.url}
           width={coverImage.fields.file.details.image.width}
           height={coverImage.fields.file.details.image.height}
+          className=" w-full h-full object-cover"
         />
       </div>
       <div className='flex justify-between items-center md:hidden mb-6'>

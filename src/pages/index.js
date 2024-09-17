@@ -18,7 +18,7 @@ const Posts = ({ posts }) => {
   return (
     <section className={`section ${geistSans.variable} ${geistMono.variable} font-[family-name:var(--font-geist-mono)]`}>
       <div className='container'>
-        <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 sm:gap-10'>
+        <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-[1rem]'>
           {posts.map((post, i) => (
             <>
               <PostCard key={post.fields.slug} post={post} />
