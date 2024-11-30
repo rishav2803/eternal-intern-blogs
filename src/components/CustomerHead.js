@@ -8,8 +8,9 @@ export default function CustomHead({
   ogImage
 }) {
   const ogTitle = title.replace(' - Eternal Intern', '');
-  const pageURL = `${process.env.BASE_URL}/posts/${pageSlug}`;
-  console.log(ogImage);
+  const pageURL = pageSlug
+    ? `${process.env.BASE_URL}/posts/${pageSlug}`
+    : `${process.env.BASE_URL}`;
 
   return (
     <Head>
